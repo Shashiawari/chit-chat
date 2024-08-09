@@ -32,15 +32,20 @@ ul {
     width: 100%;
 }
 .active {
-    padding: 5px;
-  border: 0.5px solid #ffffe3;
+  padding: 5px;
   width: 90%;
-  height: 13vh;
+  height: 10vh;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .active::-webkit-scrollbar {
-  width: 0;
+  --scrollbar-color-thumb: #ffffe3;
+  --scrollbar-color-track: transparent;
+  --scrollbar-width: thin;
+  --scrollbar-width-legacy: 0.5rem;
 }
 
 #messages li {
