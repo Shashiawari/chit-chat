@@ -1,48 +1,17 @@
 {
-  "name": "drag-drop-canvas",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^15.0.0",
-    "react-canvas": "^1.3.0",
-    "react-dnd": "^16.0.1",
-    "react-dnd-html5-backend": "^16.0.1",
-    "react-dom": "^15.0.0",
-    "react-draggable": "^4.4.6",
-    "react-flow-renderer": "^10.3.17",
-    "react-modal": "^3.16.1",
-    "react-popup": "^0.11.2",
-    "react-resizable": "^3.0.5",
-    "react-rnd": "^10.4.12",
-    "react-scripts": "5.0.1",
-    "styled-components": "^6.1.12",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "nodechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mime": "^4.0.4",
+    "socket.io": "^4.7.5",
+    "uuid": "^10.0.0"
   }
 }
