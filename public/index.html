@@ -1,279 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat App</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="port.css" />
-  </head>
-  <body>
-    <div id="username-section">
-      <div class="bod">
-        <svg
-          width="897"
-          height="100"
-          viewBox="0 0 897 100"
-          fill="none"
-          class="mb-5"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="path"
-            d="M99.0001 47.244H101.5V44.744V42.568C101.5 30.4219 96.8866 20.5197 88.3146 13.714C79.8156 6.96639 67.6808 3.45996 52.9201 3.45996C37.5258 3.45996 25.0151 7.95971 16.3354 16.1943C7.64239 24.4415 3.06006 36.1823 3.06006 50.12C3.06006 64.0576 7.64239 75.7984 16.3354 84.0456C25.0151 92.2802 37.5258 96.78 52.9201 96.78C67.6808 96.78 79.8156 93.2735 88.3146 86.5259C96.8866 79.7202 101.5 69.818 101.5 57.672V55.496V52.996H99.0001H72.1201H69.6201V55.496V57.672C69.6201 62.1727 68.5634 64.6002 66.5488 66.0974C64.3134 67.7587 60.3293 68.74 53.3041 68.74C44.5702 68.74 39.9857 67.6527 37.4145 65.2407C34.8963 62.8783 33.6601 58.6095 33.6601 50.12C33.6601 41.6304 34.8963 37.3616 37.4145 34.9993C39.9857 32.5873 44.5702 31.5 53.3041 31.5C60.3293 31.5 64.3134 32.4812 66.5488 34.1425C68.5634 35.6397 69.6201 38.0672 69.6201 42.568V44.744V47.244H72.1201H99.0001ZM138.364 95.5H140.864V93V63.244H175.8V93V95.5H178.3H202.364H204.864V93V7.23996V4.73996H202.364H178.3H175.8V7.23996V36.612H140.864V7.23996V4.73996H138.364H114.3H111.8V7.23996V93V95.5H114.3H138.364ZM243.074 95.5H245.574V93V7.23996V4.73996H243.074H219.01H216.51V7.23996V93V95.5H219.01H243.074ZM312.2 95.5H314.7V93V31.372H342.408H344.908V28.872V7.23996V4.73996H342.408H257.8H255.3V7.23996V28.872V31.372H257.8H285.636V93V95.5H288.136H312.2ZM437.903 67.724H440.403V65.224V44.744V42.244H437.903H384.015H381.515V44.744V65.224V67.724H384.015H437.903ZM573.595 47.244H576.095V44.744V42.568C576.095 30.4219 571.482 20.5197 562.91 13.714C554.411 6.96639 542.276 3.45996 527.515 3.45996C512.121 3.45996 499.61 7.95971 490.93 16.1943C482.237 24.4415 477.655 36.1823 477.655 50.12C477.655 64.0576 482.237 75.7984 490.93 84.0456C499.61 92.2802 512.121 96.78 527.515 96.78C542.276 96.78 554.411 93.2735 562.91 86.5259C571.482 79.7202 576.095 69.818 576.095 57.672V55.496V52.996H573.595H546.715H544.215V55.496V57.672C544.215 62.1727 543.158 64.6002 541.144 66.0974C538.908 67.7587 534.924 68.74 527.899 68.74C519.165 68.74 514.581 67.6527 512.009 65.2407C509.491 62.8783 508.255 58.6095 508.255 50.12C508.255 41.6304 509.491 37.3616 512.009 34.9993C514.581 32.5873 519.165 31.5 527.899 31.5C534.924 31.5 538.908 32.4812 541.144 34.1425C543.158 35.6397 544.215 38.0672 544.215 42.568V44.744V47.244H546.715H573.595ZM612.959 95.5H615.459V93V63.244H650.395V93V95.5H652.895H676.959H679.459V93V7.23996V4.73996H676.959H652.895H650.395V7.23996V36.612H615.459V7.23996V4.73996H612.959H588.895H586.395V7.23996V93V95.5H588.895H612.959ZM715.493 95.5H717.156L717.799 93.9668L723.812 79.628H761.178L767.069 93.9509L767.706 95.5H769.381H797.029H800.835L799.323 92.0069L762.203 6.2469L761.551 4.73996H759.909H725.477H723.833L723.182 6.24979L686.19 92.0098L684.684 95.5H688.485H715.493ZM738.538 44.422L738.552 44.3878L738.566 44.3531L742.582 33.7976L746.699 44.3711L746.709 44.3966L746.72 44.422L750.277 52.996H734.981L738.538 44.422ZM861.045 95.5H863.545V93V31.372H891.253H893.753V28.872V7.23996V4.73996H891.253H806.645H804.145V7.23996V28.872V31.372H806.645H834.481V93V95.5H836.981H861.045Z"
-            stroke="#FFFFE3"
-            stroke-width="5"
-          />
-        </svg>
 
-        <div class="out">
-          <div class="rooms inputBox">
-            <input
-              id="room-input"
-              placeholder="Enter room code or create a room"
-              autocomplete="off"
-            />
-            <span>create or enter room</span>
-            <button id="create-room-button">Create Room</button>
-          </div>
-          <div class="rooms2 inputBox">
-            <input
-              id="username-input"
-              placeholder="Enter your username"
-              autocomplete="off"
-            />
-            <span>User name :</span>
-            <button id="username-button">Join Chat</button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="port.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #10100e;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #user-list li {
+      color: #ffffe3;
+      background-color: rgba(238, 130, 238, 0) !important;
+    }
+
+
+    .wid {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .wid svg {
+      width: 100%;
+    }
+
+    .active {
+      padding: 5px;
+      width: 90%;
+      height: 10vh;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .active::-webkit-scrollbar {
+      --scrollbar-color-thumb: #ffffe3;
+      --scrollbar-color-track: transparent;
+      --scrollbar-width: thin;
+      --scrollbar-width-legacy: 0.5rem;
+    }
+
+    #messages li {
+      color: #ffffe3;
+      background-color: rgba(238, 130, 238, 0) !important;
+    }
+
+    input,
+    button {
+      padding: 10px;
+    }
+
+    #status {
+      margin-bottom: 20px;
+    }
+
+    #username-section {
+      display: block;
+    }
+
+    .mes {
+      height: 50vh;
+      padding: 30px;
+      margin-top: 50px;
+      overflow-y: scroll;
+      border: 2px solid #30302b;
+
+    }
+
+    .mes::-webkit-scrollbar {
+      width: 0;
+    }
+
+    #chat-section {
+      display: none;
+    }
+
+    .media-message img,
+    .media-message video {
+      max-width: 100%;
+    }
+
+    #exit-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    #modal-content button {
+      margin: 10px;
+    }
+
+    #username-section {
+      background-color: #10100e;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #username-section svg {
+      width: 100%;
+    }
+
+    #username-section input {
+      width: 100%;
+    }
+
+    .rooms {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rooms2 {
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* From Uiverse.io by saidbl1 */
+    .inputBox {
+      position: relative;
+    }
+
+    .inputBox input {
+      padding: 15px 20px;
+      outline: none;
+      background: transparent;
+      border-radius: 5px;
+      color: #ffffe3;
+      border: 1px solid#30302b;
+      font-size: 1em;
+    }
+
+    .inputBox span {
+      position: absolute;
+      left: 0;
+      font-size: 0.7em;
+      transform: translateX(14px) translateY(-7.5px);
+      padding: 0 6px 1px 5px;
+      border-radius: 2px;
+      background: #212121;
+      letter-spacing: 1px;
+      border: 1px solid #30302b;
+      color: #ffffe3;
+    }
+
+    .bod {
+      border: 2px solid#ffffe3;
+      width: 70%;
+      padding: 70px;
+    }
+
+    .inputBox button {
+      width: 55%;
+      background-color: rgba(0, 0, 0, 0);
+      color: #ffffe3;
+      border: 2px solid #30302b;
+      margin-top: 20px;
+    }
+
+    .bod svg {
+      width: 100%;
+      fill: none !important;
+    }
+
+    .path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: sv 5s linear alternate infinite;
+    }
+
+    @keyframes sv {
+      from {
+        stroke-dashoffset: 1000;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    ::placeholder {
+      text-transform: capitalize;
+    }
+
+    .para {
+      color: #ffffe3;
+      text-transform: capitalize;
+      font-size: 12px;
+      text-align: center;
+      position: absolute;
+      top: 85%;
+    }
+
+    @media (max-width: 1000px) {
+      .out {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .rooms,
+      .rooms2 {
+        display: flex;
+        align-items: center;
+      }
+
+      .bod {
+        border: 2px solid#ffffe3;
+        width: 90%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 70%;
+      }
+    }
+
+    #chat-section {
+      color: #ffffe3;
+      background-color: #10100e;
+    }
+
+    .formschat {
+      padding: 10px;
+      width: 100%;
+      position: fixed;
+      top: 80%;
+    }
+
+    .formschat input {
+      width: 100%;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      background-color: #f4f4f400;
+      border: 2px solid #30302b;
+      color: #ffffe3;
+    }
+
+    #form {
+      display: flex;
+      gap: 30px;
+    }
+
+    #form button {
+      border: 2px solid #30302b;
+      background-color: #30302b00;
+      color: #ffffe3;
+    }
+
+    #file-input {
+      margin-top: 10px;
+    }
+
+    #file-input button {
+      background-color: #10100e;
+      border: 2px solid #30302b;
+    }
+
+    #file-input::file-selector-button {
+      background: #084cdf00;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #ffffe3;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="username-section">
+    <div class="bod">
+      <svg width="897" height="100" viewBox="0 0 897 100" fill="none" class="mb-5" xmlns="http://www.w3.org/2000/svg">
+        <path class="path"
+          d="M99.0001 47.244H101.5V44.744V42.568C101.5 30.4219 96.8866 20.5197 88.3146 13.714C79.8156 6.96639 67.6808 3.45996 52.9201 3.45996C37.5258 3.45996 25.0151 7.95971 16.3354 16.1943C7.64239 24.4415 3.06006 36.1823 3.06006 50.12C3.06006 64.0576 7.64239 75.7984 16.3354 84.0456C25.0151 92.2802 37.5258 96.78 52.9201 96.78C67.6808 96.78 79.8156 93.2735 88.3146 86.5259C96.8866 79.7202 101.5 69.818 101.5 57.672V55.496V52.996H99.0001H72.1201H69.6201V55.496V57.672C69.6201 62.1727 68.5634 64.6002 66.5488 66.0974C64.3134 67.7587 60.3293 68.74 53.3041 68.74C44.5702 68.74 39.9857 67.6527 37.4145 65.2407C34.8963 62.8783 33.6601 58.6095 33.6601 50.12C33.6601 41.6304 34.8963 37.3616 37.4145 34.9993C39.9857 32.5873 44.5702 31.5 53.3041 31.5C60.3293 31.5 64.3134 32.4812 66.5488 34.1425C68.5634 35.6397 69.6201 38.0672 69.6201 42.568V44.744V47.244H72.1201H99.0001ZM138.364 95.5H140.864V93V63.244H175.8V93V95.5H178.3H202.364H204.864V93V7.23996V4.73996H202.364H178.3H175.8V7.23996V36.612H140.864V7.23996V4.73996H138.364H114.3H111.8V7.23996V93V95.5H114.3H138.364ZM243.074 95.5H245.574V93V7.23996V4.73996H243.074H219.01H216.51V7.23996V93V95.5H219.01H243.074ZM312.2 95.5H314.7V93V31.372H342.408H344.908V28.872V7.23996V4.73996H342.408H257.8H255.3V7.23996V28.872V31.372H257.8H285.636V93V95.5H288.136H312.2ZM437.903 67.724H440.403V65.224V44.744V42.244H437.903H384.015H381.515V44.744V65.224V67.724H384.015H437.903ZM573.595 47.244H576.095V44.744V42.568C576.095 30.4219 571.482 20.5197 562.91 13.714C554.411 6.96639 542.276 3.45996 527.515 3.45996C512.121 3.45996 499.61 7.95971 490.93 16.1943C482.237 24.4415 477.655 36.1823 477.655 50.12C477.655 64.0576 482.237 75.7984 490.93 84.0456C499.61 92.2802 512.121 96.78 527.515 96.78C542.276 96.78 554.411 93.2735 562.91 86.5259C571.482 79.7202 576.095 69.818 576.095 57.672V55.496V52.996H573.595H546.715H544.215V55.496V57.672C544.215 62.1727 543.158 64.6002 541.144 66.0974C538.908 67.7587 534.924 68.74 527.899 68.74C519.165 68.74 514.581 67.6527 512.009 65.2407C509.491 62.8783 508.255 58.6095 508.255 50.12C508.255 41.6304 509.491 37.3616 512.009 34.9993C514.581 32.5873 519.165 31.5 527.899 31.5C534.924 31.5 538.908 32.4812 541.144 34.1425C543.158 35.6397 544.215 38.0672 544.215 42.568V44.744V47.244H546.715H573.595ZM612.959 95.5H615.459V93V63.244H650.395V93V95.5H652.895H676.959H679.459V93V7.23996V4.73996H676.959H652.895H650.395V7.23996V36.612H615.459V7.23996V4.73996H612.959H588.895H586.395V7.23996V93V95.5H588.895H612.959ZM715.493 95.5H717.156L717.799 93.9668L723.812 79.628H761.178L767.069 93.9509L767.706 95.5H769.381H797.029H800.835L799.323 92.0069L762.203 6.2469L761.551 4.73996H759.909H725.477H723.833L723.182 6.24979L686.19 92.0098L684.684 95.5H688.485H715.493ZM738.538 44.422L738.552 44.3878L738.566 44.3531L742.582 33.7976L746.699 44.3711L746.709 44.3966L746.72 44.422L750.277 52.996H734.981L738.538 44.422ZM861.045 95.5H863.545V93V31.372H891.253H893.753V28.872V7.23996V4.73996H891.253H806.645H804.145V7.23996V28.872V31.372H806.645H834.481V93V95.5H836.981H861.045Z"
+          stroke="#FFFFE3" stroke-width="5" />
+      </svg>
+
+      <div class="out">
+        <div class="rooms inputBox">
+          <input id="room-input" placeholder="Enter room code or create a room" autocomplete="off" />
+          <span>create or enter room</span>
+          <button id="create-room-button">Create Room</button>
+        </div>
+        <div class="rooms2 inputBox">
+          <input id="username-input" placeholder="Enter your username" autocomplete="off" />
+          <span>User name :</span>
+          <button id="username-button">Join Chat</button>
         </div>
       </div>
-      <div class="para mt-3">
-        <p>
-          copy the room code to send it to your friends make sure you create a
-          room before entering a room
-        </p>
+    </div>
+    <div class="para mt-3">
+      <p>
+        copy the room code to send it to your friends make sure you create a
+        room before entering a room
+      </p>
+    </div>
+  </div>
+  <div id="chat-section">
+    <div class="roomid"></div>
+
+    <div class="wid">
+      <svg width="897" height="100" viewBox="0 0 897 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="path"
+          d="M99.0001 47.244H101.5V44.744V42.568C101.5 30.4219 96.8866 20.5197 88.3146 13.714C79.8156 6.96639 67.6808 3.45996 52.9201 3.45996C37.5258 3.45996 25.0151 7.95971 16.3354 16.1943C7.64239 24.4415 3.06006 36.1823 3.06006 50.12C3.06006 64.0576 7.64239 75.7984 16.3354 84.0456C25.0151 92.2802 37.5258 96.78 52.9201 96.78C67.6808 96.78 79.8156 93.2735 88.3146 86.5259C96.8866 79.7202 101.5 69.818 101.5 57.672V55.496V52.996H99.0001H72.1201H69.6201V55.496V57.672C69.6201 62.1727 68.5634 64.6002 66.5488 66.0974C64.3134 67.7587 60.3293 68.74 53.3041 68.74C44.5702 68.74 39.9857 67.6527 37.4145 65.2407C34.8963 62.8783 33.6601 58.6095 33.6601 50.12C33.6601 41.6304 34.8963 37.3616 37.4145 34.9993C39.9857 32.5873 44.5702 31.5 53.3041 31.5C60.3293 31.5 64.3134 32.4812 66.5488 34.1425C68.5634 35.6397 69.6201 38.0672 69.6201 42.568V44.744V47.244H72.1201H99.0001ZM138.364 95.5H140.864V93V63.244H175.8V93V95.5H178.3H202.364H204.864V93V7.23996V4.73996H202.364H178.3H175.8V7.23996V36.612H140.864V7.23996V4.73996H138.364H114.3H111.8V7.23996V93V95.5H114.3H138.364ZM243.074 95.5H245.574V93V7.23996V4.73996H243.074H219.01H216.51V7.23996V93V95.5H219.01H243.074ZM312.2 95.5H314.7V93V31.372H342.408H344.908V28.872V7.23996V4.73996H342.408H257.8H255.3V7.23996V28.872V31.372H257.8H285.636V93V95.5H288.136H312.2ZM437.903 67.724H440.403V65.224V44.744V42.244H437.903H384.015H381.515V44.744V65.224V67.724H384.015H437.903ZM573.595 47.244H576.095V44.744V42.568C576.095 30.4219 571.482 20.5197 562.91 13.714C554.411 6.96639 542.276 3.45996 527.515 3.45996C512.121 3.45996 499.61 7.95971 490.93 16.1943C482.237 24.4415 477.655 36.1823 477.655 50.12C477.655 64.0576 482.237 75.7984 490.93 84.0456C499.61 92.2802 512.121 96.78 527.515 96.78C542.276 96.78 554.411 93.2735 562.91 86.5259C571.482 79.7202 576.095 69.818 576.095 57.672V55.496V52.996H573.595H546.715H544.215V55.496V57.672C544.215 62.1727 543.158 64.6002 541.144 66.0974C538.908 67.7587 534.924 68.74 527.899 68.74C519.165 68.74 514.581 67.6527 512.009 65.2407C509.491 62.8783 508.255 58.6095 508.255 50.12C508.255 41.6304 509.491 37.3616 512.009 34.9993C514.581 32.5873 519.165 31.5 527.899 31.5C534.924 31.5 538.908 32.4812 541.144 34.1425C543.158 35.6397 544.215 38.0672 544.215 42.568V44.744V47.244H546.715H573.595ZM612.959 95.5H615.459V93V63.244H650.395V93V95.5H652.895H676.959H679.459V93V7.23996V4.73996H676.959H652.895H650.395V7.23996V36.612H615.459V7.23996V4.73996H612.959H588.895H586.395V7.23996V93V95.5H588.895H612.959ZM715.493 95.5H717.156L717.799 93.9668L723.812 79.628H761.178L767.069 93.9509L767.706 95.5H769.381H797.029H800.835L799.323 92.0069L762.203 6.2469L761.551 4.73996H759.909H725.477H723.833L723.182 6.24979L686.19 92.0098L684.684 95.5H688.485H715.493ZM738.538 44.422L738.552 44.3878L738.566 44.3531L742.582 33.7976L746.699 44.3711L746.709 44.3966L746.72 44.422L750.277 52.996H734.981L738.538 44.422ZM861.045 95.5H863.545V93V31.372H891.253H893.753V28.872V7.23996V4.73996H891.253H806.645H804.145V7.23996V28.872V31.372H806.645H834.481V93V95.5H836.981H861.045Z"
+          stroke="#FFFFE3" stroke-width="5" />
+      </svg>
+
+      <div class="active">
+        <div id="status">Online users: <span id="user-count">0</span></div>
+
+        <ul id="user-list"></ul>
       </div>
     </div>
-    <div id="chat-section">
-      <div class="roomid"></div>
-
-      <div class="wid">
-        <svg
-          width="897"
-          height="100"
-          viewBox="0 0 897 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="path"
-            d="M99.0001 47.244H101.5V44.744V42.568C101.5 30.4219 96.8866 20.5197 88.3146 13.714C79.8156 6.96639 67.6808 3.45996 52.9201 3.45996C37.5258 3.45996 25.0151 7.95971 16.3354 16.1943C7.64239 24.4415 3.06006 36.1823 3.06006 50.12C3.06006 64.0576 7.64239 75.7984 16.3354 84.0456C25.0151 92.2802 37.5258 96.78 52.9201 96.78C67.6808 96.78 79.8156 93.2735 88.3146 86.5259C96.8866 79.7202 101.5 69.818 101.5 57.672V55.496V52.996H99.0001H72.1201H69.6201V55.496V57.672C69.6201 62.1727 68.5634 64.6002 66.5488 66.0974C64.3134 67.7587 60.3293 68.74 53.3041 68.74C44.5702 68.74 39.9857 67.6527 37.4145 65.2407C34.8963 62.8783 33.6601 58.6095 33.6601 50.12C33.6601 41.6304 34.8963 37.3616 37.4145 34.9993C39.9857 32.5873 44.5702 31.5 53.3041 31.5C60.3293 31.5 64.3134 32.4812 66.5488 34.1425C68.5634 35.6397 69.6201 38.0672 69.6201 42.568V44.744V47.244H72.1201H99.0001ZM138.364 95.5H140.864V93V63.244H175.8V93V95.5H178.3H202.364H204.864V93V7.23996V4.73996H202.364H178.3H175.8V7.23996V36.612H140.864V7.23996V4.73996H138.364H114.3H111.8V7.23996V93V95.5H114.3H138.364ZM243.074 95.5H245.574V93V7.23996V4.73996H243.074H219.01H216.51V7.23996V93V95.5H219.01H243.074ZM312.2 95.5H314.7V93V31.372H342.408H344.908V28.872V7.23996V4.73996H342.408H257.8H255.3V7.23996V28.872V31.372H257.8H285.636V93V95.5H288.136H312.2ZM437.903 67.724H440.403V65.224V44.744V42.244H437.903H384.015H381.515V44.744V65.224V67.724H384.015H437.903ZM573.595 47.244H576.095V44.744V42.568C576.095 30.4219 571.482 20.5197 562.91 13.714C554.411 6.96639 542.276 3.45996 527.515 3.45996C512.121 3.45996 499.61 7.95971 490.93 16.1943C482.237 24.4415 477.655 36.1823 477.655 50.12C477.655 64.0576 482.237 75.7984 490.93 84.0456C499.61 92.2802 512.121 96.78 527.515 96.78C542.276 96.78 554.411 93.2735 562.91 86.5259C571.482 79.7202 576.095 69.818 576.095 57.672V55.496V52.996H573.595H546.715H544.215V55.496V57.672C544.215 62.1727 543.158 64.6002 541.144 66.0974C538.908 67.7587 534.924 68.74 527.899 68.74C519.165 68.74 514.581 67.6527 512.009 65.2407C509.491 62.8783 508.255 58.6095 508.255 50.12C508.255 41.6304 509.491 37.3616 512.009 34.9993C514.581 32.5873 519.165 31.5 527.899 31.5C534.924 31.5 538.908 32.4812 541.144 34.1425C543.158 35.6397 544.215 38.0672 544.215 42.568V44.744V47.244H546.715H573.595ZM612.959 95.5H615.459V93V63.244H650.395V93V95.5H652.895H676.959H679.459V93V7.23996V4.73996H676.959H652.895H650.395V7.23996V36.612H615.459V7.23996V4.73996H612.959H588.895H586.395V7.23996V93V95.5H588.895H612.959ZM715.493 95.5H717.156L717.799 93.9668L723.812 79.628H761.178L767.069 93.9509L767.706 95.5H769.381H797.029H800.835L799.323 92.0069L762.203 6.2469L761.551 4.73996H759.909H725.477H723.833L723.182 6.24979L686.19 92.0098L684.684 95.5H688.485H715.493ZM738.538 44.422L738.552 44.3878L738.566 44.3531L742.582 33.7976L746.699 44.3711L746.709 44.3966L746.72 44.422L750.277 52.996H734.981L738.538 44.422ZM861.045 95.5H863.545V93V31.372H891.253H893.753V28.872V7.23996V4.73996H891.253H806.645H804.145V7.23996V28.872V31.372H806.645H834.481V93V95.5H836.981H861.045Z"
-            stroke="#FFFFE3"
-            stroke-width="5"
-          />
-        </svg>
-
-        <div class="active">
-          <div id="status">Online users: <span id="user-count">0</span></div>
-
-          <ul id="user-list"></ul>
-        </div>
-      </div>
-      <div class="mes mx-2">
-        <ul id="messages"></ul>
-      </div>
-      <div class="formschat">
-        <form id="form" action="">
-          <input id="input" autocomplete="off" placeholder="Type a message" />
-          <button>Send</button>
-        </form>
-        <input type="file" id="file-input" />
-      </div>
+    <div class="mes mx-2">
+      <ul id="messages"></ul>
     </div>
-
-    <div id="exit-modal">
-      <div id="modal-content">
-        <p>Do you want to exit the room?</p>
-        <button id="confirm-exit">Exit</button>
-        <button id="cancel-exit">Cancel</button>
-      </div>
+    <div class="formschat">
+      <form id="form" action="">
+        <input id="input" autocomplete="off" placeholder="Type a message" />
+        <button>Send</button>
+      </form>
+      <input type="file" id="file-input" />
     </div>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      console.log("Script loaded");
+  <div id="exit-modal">
+    <div id="modal-content">
+      <p>Do you want to exit the room?</p>
+      <button id="confirm-exit">Exit</button>
+      <button id="cancel-exit">Cancel</button>
+    </div>
+  </div>
 
-      var socket = io();
-      var createRoomButton = document.getElementById("create-room-button");
-      var roomInput = document.getElementById("room-input");
-      var usernameInput = document.getElementById("username-input");
-      var usernameButton = document.getElementById("username-button");
-      var usernameSection = document.getElementById("username-section");
-      var chatSection = document.getElementById("chat-section");
-      var form = document.getElementById("form");
-      var input = document.getElementById("input");
-      var fileInput = document.getElementById("file-input");
-      var userCount = document.getElementById("user-count");
-      var userList = document.getElementById("user-list");
-      var exitModal = document.getElementById("exit-modal");
-      var confirmExitButton = document.getElementById("confirm-exit");
-      var cancelExitButton = document.getElementById("cancel-exit");
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    console.log("Script loaded");
 
-      var isInRoom = false;
-      var isExiting = false;
+    var socket = io();
+    var createRoomButton = document.getElementById("create-room-button");
+    var roomInput = document.getElementById("room-input");
+    var usernameInput = document.getElementById("username-input");
+    var usernameButton = document.getElementById("username-button");
+    var usernameSection = document.getElementById("username-section");
+    var chatSection = document.getElementById("chat-section");
+    var form = document.getElementById("form");
+    var input = document.getElementById("input");
+    var fileInput = document.getElementById("file-input");
+    var userCount = document.getElementById("user-count");
+    var userList = document.getElementById("user-list");
+    var exitModal = document.getElementById("exit-modal");
+    var confirmExitButton = document.getElementById("confirm-exit");
+    var cancelExitButton = document.getElementById("cancel-exit");
 
-      console.log("Elements initialized");
+    var isInRoom = false;
+    var isExiting = false;
 
-      createRoomButton.addEventListener("click", function () {
-        console.log("Create room button clicked");
-        socket.emit("create room", function (roomCode) {
-          roomInput.value = roomCode;
-          const c = document.getElementsByClassName("roomid");
-          for (let i = 0; i < c.length; i++) {
-            c[i].innerHTML = roomCode;
-          }
-        });
-      });
+    console.log("Elements initialized");
 
-      usernameButton.addEventListener("click", function () {
-        console.log("Join button clicked");
-        var username = usernameInput.value.trim();
-        var room = roomInput.value.trim();
-        console.log("Username:", username);
-        console.log("Room:", room);
-        if (username && room) {
-          socket.emit("join room", { username, room });
-          isInRoom = true; // Set the flag indicating the user is in a room
-          usernameSection.style.display = "none";
-          chatSection.style.display = "block";
+    createRoomButton.addEventListener("click", function () {
+      console.log("Create room button clicked");
+      socket.emit("create room", function (roomCode) {
+        roomInput.value = roomCode;
+        const c = document.getElementsByClassName("roomid");
+        for (let i = 0; i < c.length; i++) {
+          c[i].innerHTML = roomCode;
         }
       });
+    });
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (input.value) {
-          socket.emit("chat message", input.value);
-          input.value = "";
-        }
-      });
+    usernameButton.addEventListener("click", function () {
+      console.log("Join button clicked");
+      var username = usernameInput.value.trim();
+      var room = roomInput.value.trim();
+      console.log("Username:", username);
+      console.log("Room:", room);
+      if (username && room) {
+        socket.emit("join room", { username, room });
+        isInRoom = true; // Set the flag indicating the user is in a room
+        usernameSection.style.display = "none";
+        chatSection.style.display = "block";
+      }
+    });
 
-      fileInput.addEventListener("change", function () {
-        var file = fileInput.files[0];
-        if (file) {
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            socket.emit(
-              "upload",
-              { name: file.name, data: e.target.result },
-              function (response) {
-                if (response.status === "ok") {
-                  console.log("File uploaded successfully:", response.fileUrl);
-                } else {
-                  console.error("File upload failed");
-                }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit("chat message", input.value);
+        input.value = "";
+      }
+    });
+
+    fileInput.addEventListener("change", function () {
+      var file = fileInput.files[0];
+      if (file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          socket.emit(
+            "upload",
+            { name: file.name, data: e.target.result },
+            function (response) {
+              if (response.status === "ok") {
+                console.log("File uploaded successfully:", response.fileUrl);
+              } else {
+                console.error("File upload failed");
               }
-            );
-          };
-          reader.readAsArrayBuffer(file);
-        }
-      });
-
-      socket.on("chat message", function (data) {
-        var item = document.createElement("li");
-        item.textContent = data.username + ": " + data.message;
-        document.getElementById("messages").appendChild(item);
-        window.scrollTo(0, document.body.scrollHeight);
-      });
-
-      socket.on("file message", function (data) {
-        var item = document.createElement("li");
-        if (data.mimeType.startsWith("image/")) {
-          item.innerHTML =
-            data.username +
-            ': <br><img src="' +
-            data.fileUrl +
-            '" class="img-fluid">';
-        } else if (data.mimeType.startsWith("video/")) {
-          item.innerHTML =
-            data.username +
-            ': <br><video src="' +
-            data.fileUrl +
-            '" controls class="media-message"></video>';
-        } else {
-          item.innerHTML =
-            data.username +
-            ': <a href="' +
-            data.fileUrl +
-            '" download>' +
-            data.fileUrl +
-            "</a>";
-        }
-        document.getElementById("messages").appendChild(item);
-        window.scrollTo(0, document.body.scrollHeight);
-      });
-
-      socket.on("user count", function (count) {
-        userCount.textContent = count;
-      });
-
-      socket.on("user list", function (users) {
-        userList.innerHTML = "";
-        users.forEach(function (user) {
-          var item = document.createElement("li");
-          item.textContent = user;
-          userList.appendChild(item);
-        });
-      });
-
-      window.addEventListener("beforeunload", function (e) {
-        if (isInRoom && !isExiting) {
-          e.preventDefault();
-          e.returnValue = "";
-          showExitModal();
-          return "";
-        }
-      });
-
-      function showExitModal() {
-        exitModal.style.display = "flex";
+            }
+          );
+        };
+        reader.readAsArrayBuffer(file);
       }
+    });
 
-      confirmExitButton.addEventListener("click", function () {
-        isExiting = true;
-        exitModal.style.display = "none";
-        window.removeEventListener("beforeunload", beforeUnloadHandler);
-        window.location.reload(); // or use window.location.href to navigate
-      });
+    socket.on("chat message", function (data) {
+      var item = document.createElement("li");
+      item.textContent = data.username + ": " + data.message;
+      document.getElementById("messages").appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
 
-      cancelExitButton.addEventListener("click", function () {
-        exitModal.style.display = "none";
-      });
-
-      // Optional: Hide the modal when user navigates away or the connection is lost
-      socket.on("disconnect", function () {
-        exitModal.style.display = "none";
-      });
-
-      function beforeUnloadHandler(e) {
-        if (isInRoom && !isExiting) {
-          e.preventDefault();
-          e.returnValue = "";
-          showExitModal();
-          return "";
-        }
+    socket.on("file message", function (data) {
+      var item = document.createElement("li");
+      if (data.mimeType.startsWith("image/")) {
+        item.innerHTML =
+          data.username +
+          ': <br><img src="' +
+          data.fileUrl +
+          '" class="img-fluid">';
+      } else if (data.mimeType.startsWith("video/")) {
+        item.innerHTML =
+          data.username +
+          ': <br><video src="' +
+          data.fileUrl +
+          '" controls class="media-message"></video>';
+      } else {
+        item.innerHTML =
+          data.username +
+          ': <a href="' +
+          data.fileUrl +
+          '" download>' +
+          data.fileUrl +
+          "</a>";
       }
+      document.getElementById("messages").appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
 
-      console.log("Event listeners added");
-    </script>
-  </body>
+    socket.on("user count", function (count) {
+      userCount.textContent = count;
+    });
+
+    socket.on("user list", function (users) {
+      userList.innerHTML = "";
+      users.forEach(function (user) {
+        var item = document.createElement("li");
+        item.textContent = user;
+        userList.appendChild(item);
+      });
+    });
+
+    window.addEventListener("beforeunload", function (e) {
+      if (isInRoom && !isExiting) {
+        e.preventDefault();
+        e.returnValue = "";
+        showExitModal();
+        return "";
+      }
+    });
+
+    function showExitModal() {
+      exitModal.style.display = "flex";
+    }
+
+    confirmExitButton.addEventListener("click", function () {
+      isExiting = true;
+      exitModal.style.display = "none";
+      window.removeEventListener("beforeunload", beforeUnloadHandler);
+      window.location.reload(); // or use window.location.href to navigate
+    });
+
+    cancelExitButton.addEventListener("click", function () {
+      exitModal.style.display = "none";
+    });
+
+    // Optional: Hide the modal when user navigates away or the connection is lost
+    socket.on("disconnect", function () {
+      exitModal.style.display = "none";
+    });
+
+    function beforeUnloadHandler(e) {
+      if (isInRoom && !isExiting) {
+        e.preventDefault();
+        e.returnValue = "";
+        showExitModal();
+        return "";
+      }
+    }
+
+    console.log("Event listeners added");
+  </script>
+</body>
+
 </html>
